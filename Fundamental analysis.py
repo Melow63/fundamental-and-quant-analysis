@@ -133,20 +133,20 @@ def investment_score(data):
 
 def investment_recommendation(score):
     if score >= 16:
-        return "✅ High-quality stock with strong profitability and growth."
+        return " High-quality stock with strong profitability and growth."
     elif score >= 12:
-        return "🔹 Solid fundamentals, but monitor valuation or debt."
+        return " Solid fundamentals, but monitor valuation or debt."
     elif score >= 8:
-        return "⚠️ Average performance with potential red flags."
+        return " Average performance with potential red flags."
     else:
-        return "🚨 Risky profile: weak fundamentals or poor growth."
+        return " Risky profile: weak fundamentals or poor growth."
 
 
 def analyze_stock(ticker):
-    print(f"\n🔍 Fundamental Analysis — {ticker.upper()}\n")
+    print(f"\n Fundamental Analysis — {ticker.upper()}\n")
     data = get_fundamental_data(ticker)
     if not data:
-        print("❌ Unable to retrieve financial data.")
+        print(" Unable to retrieve financial data.")
         return None
 
     interpretation = interpret_data(data)
@@ -166,11 +166,11 @@ def analyze_stock(ticker):
     pd.set_option('display.colheader_justify', 'center')
     print(df.to_string(index=False, col_space=[25, 12, 40]))
 
-    print("\n🎯 Final Recommendation:")
+    print("\n Final Recommendation:")
     print(recommendation)
     return df
 
 
-# 🔥 Run
 df = analyze_stock(TICKER)
+
 
